@@ -2,11 +2,11 @@ import os
 import logging
 import pandas as pd
 from src.config import DATA_PATH,TARGET_COLUMN,ID_COLUMN
-
+logger = logging.getLogger(__name__)
 def load_data() -> pd.DataFrame:
     try:
         data = pd.read_csv(DATA_PATH)
-        logging.info("data was successfully loaded",data.head())
+        logger.info("data was successfully loaded",data.head())
 
         if TARGET_COLUMN not in data.columns:
             raise ValueError(f"Target column: {TARGET_COLUMN} was not found")
