@@ -22,3 +22,12 @@ def get_preprocessing_pipeline():
     )
     return preprocessing
 
+
+def get_model_pipeline(preprocessing):
+    pipeline  = Pipeline(
+        steps=[
+            ('preprocessing',preprocessing),
+            ('regression',LinearRegression())
+        ]
+    )
+    return pipeline
