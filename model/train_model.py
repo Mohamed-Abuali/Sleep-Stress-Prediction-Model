@@ -14,7 +14,7 @@ file_path = os.path.abspath(file_path)
 
 data = pd.read_csv(file_path)
 
-#print('Categories',data.columns.tolist())
+
 
 X = data.drop(columns=['stress_level','user_id'])
 y = data['stress_level']
